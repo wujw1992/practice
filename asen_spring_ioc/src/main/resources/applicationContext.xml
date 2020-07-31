@@ -3,5 +3,50 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userDao" class="com.asen.dao.impl.UserImpl" scope="singleton"></bean>
+    <!--
+        <bean id="userDao" class="com.asen.dao.impl.UserDaoImpl" >
+        <property name="username" value="zhangsan"/>
+            <property name="age" value="23"/>
+        </bean>
+    -->
+
+    <bean id="userDao" class="com.asen.dao.impl.UserDaoImpl">
+        <property name="strList">
+            <list>
+                <value>Java</value>
+                <value>PHP</value>
+                <value>Python</value>
+            </list>
+        </property>
+
+        <property name="userMap">
+            <map>
+                <entry key="u1" value-ref="user1"></entry>
+                <entry key="u2" value-ref="user2"></entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="p1">赵云</prop>
+                <prop key="p2">关羽</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="user1" class="com.asen.domain.User">
+        <property name="name" value="刘备"></property>
+        <property name="address" value="成都"></property>
+    </bean>
+
+    <bean id="user2" class="com.asen.domain.User">
+        <property name="name" value="张飞"></property>
+        <property name="address" value="广东"></property>
+    </bean>
+
+    <bean id="userService" class="com.asen.service.impl.UserServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"></constructor-arg>
+    </bean>
+
+
 </beans>
