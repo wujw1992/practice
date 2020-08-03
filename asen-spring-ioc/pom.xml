@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>itheima-spring-ioc</artifactId>
+    <artifactId>asen-spring-ioc</artifactId>
 
     <dependencies>
         <dependency>
