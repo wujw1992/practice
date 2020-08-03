@@ -37,6 +37,7 @@
     <modules>
         <module>asen-spring-ioc</module>
         <module>test001</module>
+        <module>asen_spring_ioc_anno</module>
     </modules>
 
     <build>
